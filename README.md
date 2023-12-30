@@ -39,6 +39,8 @@ Gamma Categorization
                             having an object with 10 initializer argument is not productive, hence opt for piecewise construction.
                         b. builder provides an API for constructing an object step by step.
                         c. When piecewise object constructions is complicated, provides an API for doing it more succinctly.
+
+                         
                     2. Factories
                         1. Abstract Factory
                         2. Factory Method
