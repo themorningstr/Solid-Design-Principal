@@ -30,7 +30,7 @@ Gamma Categorization
                 a. Deal with the creation(Construction) of objects
                 b. Explict(Constructor) Vs. Implict(DI, reflection)
                 c. Wholesale (single statement) Vs. Piecewise(step by step)
-                
+
                     1. Builder
                         a. Some objects are simple and can be created in a single initializer call, while other objects require a lot of ceremony to create, 
                             having an object with 10 initializer argument is not productive, hence opt for piecewise construction.
@@ -45,8 +45,17 @@ Gamma Categorization
                         g. Different Facets of an object can be build with different builders working in tandem via a base class
    
                     2. Factories
-                        1. Abstract Factory
-                        2. Factory Method
+                        a. Objects creation logic become too convoluted.
+                        b. Initializer is not descriptive
+                            A. Name is always __init__
+                            B. Cannot overload with same sets of argument with different names.
+                            C. Can turn into "optional parameter hell"
+                        c. Wholesale object creation(non-piecewise, unlike builder) can be outsourced to
+                            1. Abstract Factory (Can create hierarchy of factories)
+                            2. Factory Method (Separated method)
+                            3. Factory (That may exist in a separate class)
+                        d. A component responsible for solely for the wholesale creation of objects.
+                        
                     3. Prototype
                     4. Singleton
 
