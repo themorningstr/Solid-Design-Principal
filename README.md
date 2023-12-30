@@ -26,6 +26,7 @@ Solid Design Pattern
 
 
 Gamma Categorization
+
     A. Design Pattern are typically split into three categories
     B. This is called Gamma Categorization after Erich Gamma.
 
