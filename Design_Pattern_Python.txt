@@ -6,7 +6,7 @@ Solid Design Pattern
     2. Open Close Principal- OCP
             a. Class should be open for extension but closed for modification.
 
-    3. Liskov Substitution Principa;l - LSP
+    3. Liskov Substitution Principal - LSP
             a. you should be able to Substitute a base type for a subtype.
 
     4. Interface Segregation Principal - ISP
