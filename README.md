@@ -3,6 +3,8 @@
 
 
 Solid Design Pattern
+
+
     1. Single Responsibility Principal - SRP or SOC
             a. A class should have one reason to change.
             b. Seperation of concern - different classes handling different. independent task/problems
