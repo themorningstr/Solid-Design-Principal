@@ -45,8 +45,11 @@ class ProductFilter:
 
 
 class Specification:
-    def is_statisfied(slef, item):
+    def is_satisfied(self, item):
         pass
+
+    def __and__(self, other):
+        return AndSpecification(self, other)
 
 
 class Filter:
@@ -68,7 +71,7 @@ class SizeSpectification(Specification):
     def __init__(self, size):
         self.size = size
 
-    def is_statisfied(self, item):
+    def is_satisfied(self, item):
         return item.size  == self.size
 
 
@@ -78,13 +81,18 @@ class BetterFilter(Filter):
             if spec.is_satisfied(item):
                 yield item
 
+class AndSpecification(Specification):
+    def __init__(self, *args):
+        self.args = args
 
+    def is_satisfied(self, item):
+        return all(map(lambda spec : spec.is_satisfied(item), self.args))
 
 
 if __name__ == "__main__":
     apple = Product("Apple", Color.GREEN, Size.SMALL)
     tree = Product("Tree", Color.GREEN, Size.LARGE)
-    house = Product("House", Color.GREEN, Size.LARGE)
+    house = Product("House", Color.BLUE, Size.LARGE)
 
 
 
@@ -92,7 +100,27 @@ if __name__ == "__main__":
 
 
     pf = ProductFilter()
-    print()
+    print("Green Products (OLD):")
+    for p in pf.filter_by_color(product, Color.GREEN):
+        print(f" - {p.name} is green")
 
+
+    bf = BetterFilter()
+
+    print("Green Product (NEW):")
+    green = ColorSpectification(Color.GREEN)
+    for p in bf.filter(product, green):
+        print(f" - {p.name} is green")
+
+    print("Large Product")
+    large = SizeSpectification(Size.LARGE)
+    for p in bf.filter(product, large):
+        print(f" - {p.name} is large")
+
+    print("Large Blue Item")
+    # large_blue = AndSpecification(large, ColorSpectification(Color.BLUE))
+    large_blue = large & ColorSpectification(Color.BLUE)
+    for p in bf.filter(product, large_blue):
+        print(f" - {p.name} is large and blue")
 
     
