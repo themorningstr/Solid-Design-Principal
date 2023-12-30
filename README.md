@@ -1,5 +1,7 @@
 # Solid-Design-Principal
 
+
+
 Solid Design Pattern
     1. Single Responsibility Principal - SRP or SOC
             a. A class should have one reason to change.
