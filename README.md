@@ -2,7 +2,7 @@
 
 
 
-Solid Design Pattern
+Solid Design Pricipal
 
 
     1. Single Responsibility Principal - SRP or SOC
@@ -30,7 +30,7 @@ Gamma Categorization
     A. Design Pattern are typically split into three categories
     B. This is called Gamma Categorization after Erich Gamma.
 
-            Creational Pattern
+            1. Creational Pattern
                 a. Deal with the creation(Construction) of objects
                 b. Explict(Constructor) Vs. Implict(DI, reflection)
                 c. Wholesale (single statement) Vs. Piecewise(step by step)
@@ -45,7 +45,7 @@ Gamma Categorization
                     3. Prototype
                     4. Singleton
 
-            Structural Pattern
+            2. Structural Pattern
                 a. Concerned with the structure(e.g., class members)
                 b. Many pattern are wrappers that mimic the underlying class inference
                 c. Stress the importance of good API Design
@@ -57,7 +57,7 @@ Gamma Categorization
                     6. Flyweight
                     7. Proxy
 
-            Behavioral Pattern
+            3. Behavioral Pattern
                 a. They are all different; no central theme
 
                     1. Chain of Responsibility
